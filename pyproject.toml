@@ -23,13 +23,20 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+  "great_expectations",
+  "kedro",
+  "typer",
+]
 dynamic = ["version"]
 
 [project.urls]
 Documentation = "https://github.com/unknown/kedro-great-expectations#readme"
 Issues = "https://github.com/unknown/kedro-great-expectations/issues"
 Source = "https://github.com/unknown/kedro-great-expectations"
+
+[project.entry-points."kedro.project_commands"]
+great_expectations = "kedro_great_expectations.plugin:commands"
 
 [tool.hatch.version]
 path = "kedro_great_expectations/__about__.py"
